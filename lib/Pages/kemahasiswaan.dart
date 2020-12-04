@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kemahasiswaan_kelompok9/Pages/beastudi.dart';
 import 'package:kemahasiswaan_kelompok9/Pages/pengumuman.dart';
 
 class Kemahasiswaan extends StatefulWidget {
@@ -35,7 +36,9 @@ class _KemahasiswaanState extends State<Kemahasiswaan> {
           Card(
             color: Colors.blue,
             child: InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Beastudi()));
+              },
               splashColor: Colors.white,
               child: Center(
                   child: Column(

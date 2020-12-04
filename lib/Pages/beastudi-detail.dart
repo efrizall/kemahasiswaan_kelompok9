@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PengumumanDetail extends StatelessWidget {
+class BeastudiDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,9 +10,9 @@ class PengumumanDetail extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListTile(
-            title: Text('8 Agustus 2020',
+            title: Text('3 April 2020',
                 style: TextStyle(height: 2.5, fontSize: 15)),
-            subtitle: Text('Ormik Mahasiswa Baru',
+            subtitle: Text('Beastudi Tahfidz',
                 style: TextStyle(height: 1.5, fontSize: 25, color: Colors.blue)),
           ),
           Divider(

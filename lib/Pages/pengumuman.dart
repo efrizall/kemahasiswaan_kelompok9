@@ -12,10 +12,9 @@ class Pengumuman extends StatelessWidget {
           children: [
             ListTile(
               title: Text('8 Agustus 2020',
-                  style: TextStyle(height: 2, fontSize: 20)),
+                  style: TextStyle(height: 2.5, fontSize: 15)),
               subtitle: Text('Ormik Mahasiswa Baru',
-                  style: TextStyle(height: 2, fontSize: 25, color: Colors.blue)),
-              trailing: Icon(Icons.arrow_forward, size: 50,),
+                  style: TextStyle(height: 1.5, fontSize: 25, color: Colors.blue)),
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => PengumumanDetail()));
               },
