@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kemahasiswaan_kelompok9/Pages/pengumuman.dart';
 
-class Kemahasiswaan extends StatefulWidget{
+class Kemahasiswaan extends StatefulWidget {
   @override
   _KemahasiswaanState createState() => _KemahasiswaanState();
 }
@@ -8,82 +9,79 @@ class Kemahasiswaan extends StatefulWidget{
 class _KemahasiswaanState extends State<Kemahasiswaan> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          MainMenu(),
-        ],
-      ),
-    );
-  }
-}
-
-class MainMenu extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return GridView.count(
-      shrinkWrap: true,
-      crossAxisCount: 3,
-      children: mainMenuItem,
-    );
-  }
-}
-List<MainMenuItem> mainMenuItem = [
-  MainMenuItem(
-    title: "Pengumuman",
-    icon: Icons.book,
-    colorBox: Colors.blue,
-    iconColor: Colors.white,
-  ),
-  MainMenuItem(
-    title: "Beastudi",
-    icon: Icons.access_time,
-    colorBox: Colors.blue,
-    iconColor: Colors.white,
-  ),
-  MainMenuItem(
-    title: "Lomba",
-    icon: Icons.directions_run,
-    colorBox: Colors.blue,
-    iconColor: Colors.white,
-  ),
-  MainMenuItem(
-    title: "Organisasi",
-    icon: Icons.people,
-    colorBox: Colors.blue,
-    iconColor: Colors.white,
-  ),
-];
-
-class MainMenuItem extends StatelessWidget{
-  MainMenuItem({this.title, this.icon, this.colorBox, this.iconColor});
-  final String title;
-  final IconData icon;
-  final Color colorBox, iconColor;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: Container(
-            height: 80.0,
-            width: 80.0,
-            decoration: BoxDecoration(
-                color: colorBox,
-                shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(10)
-            ),
-            child: Icon(
-              icon, color: iconColor, size: 50.0
+    return Container(
+      padding: EdgeInsets.only(top: 30.0, right: 20.0, left: 20.0),
+      child: GridView.count(
+        crossAxisCount: 3,
+        children: <Widget> [
+          Card(
+            color: Colors.blue,
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Pengumuman()));
+              },
+              splashColor: Colors.white,
+              child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(Icons.announcement_outlined, size: 55, color: Colors.white,),
+                      Text ('Pengumuman', style: new TextStyle(fontSize: 17.0, color: Colors.white),)
+                    ],
+                  )
+              ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: Text(title, style: TextStyle(fontSize: 15.0),),
-        ),
-      ],
+          Card(
+            color: Colors.blue,
+            child: InkWell(
+              onTap: (){},
+              splashColor: Colors.white,
+              child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(Icons.school_outlined, size: 60, color: Colors.white,),
+                      Text ('Beastudi', style: new TextStyle(fontSize: 17.0, color: Colors.white),)
+                    ],
+                  )
+              ),
+            ),
+          ),
+          Card(
+            color: Colors.blue,
+            child: InkWell(
+              onTap: (){},
+              splashColor: Colors.white,
+              child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(Icons.assignment_turned_in_outlined, size: 60, color: Colors.white,),
+                      Text ('Lomba', style: new TextStyle(fontSize: 17.0, color: Colors.white),)
+                    ],
+                  )
+              ),
+            ),
+          ),
+          Card(
+            color: Colors.blue,
+            child: InkWell(
+              onTap: (){},
+              splashColor: Colors.white,
+              child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(Icons.people, size: 70, color: Colors.white,),
+                      Text ('Organisasi', style: new TextStyle(fontSize: 17.0, color: Colors.white),)
+                    ],
+                  )
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
